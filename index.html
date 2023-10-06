@@ -1,162 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Welcome!</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Sketchfab iframe background */
+        .sketchfab-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none; /* Add this line to allow interaction with content on top */
+        }
+
+        /* Container for content */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 120%; /* Increase the width to 120% */
+            max-width: 600px;
+            background-color: bisque;
+            padding: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: none; /* Initially hidden */
+        }
+
+        /* Full-width input fields */
+        input[type=text], textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #FFA500;
+            color: #000;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 10px; /* Add space between buttons */
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        /* Chat container */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        /* Chat textarea */
+        .chat-textarea {
+            width: 80%;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Chat submit button */
+        .chat-submit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Hide content initially */
+        .hidden-content {
+            display: none;
+        }
+
+        /* Mobile customization */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        /* Adjust initial video sizing */
+        .initial-video {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    </style>
 </head>
-<body class="opening hide-UI view-2D zoom-large data-close controls-close">
-    <div id="navbar">
-        <a id="toggle-data" href="#data"><i class="icon-data"></i>Data</a>
-        <h1>3D Solar System<br></h1>
-        <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controls</a>
+<body>
+    <!-- Sketchfab iframe background -->
+    <div class="sketchfab-iframe">
+        <iframe title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/15921a3146d84577907bbe420244f4b7/embed?autospin=1&autostart=1"></iframe>
     </div>
-    <div id="data">
-        <a class="sun" title="sun" href="#sunspeed">Sun</a>
-        <a class="mercury" title="mercury" href="#mercuryspeed">Mercury</a>
-        <a class="venus" title="venus" href="#venusspeed">Venus</a>
-        <a class="earth active" title="earth" href="#earthspeed">Earth</a>
-        <a class="moon" title="moon" href="#moonspeed">Moon</a>
-        <button onclick="window.location.href = 'eclips.html';">ECLIPS</button>
-        <a class="mars" title="mars" href="#marsspeed">Mars</a>
-        <a class="jupiter" title="jupiter" href="#jupiterspeed">Jupiter</a>
-        <a class="saturn" title="saturn" href="#saturnspeed">Saturn</a>
-        <a class="uranus" title="uranus" href="#uranusspeed">Uranus</a>
-        <a class="neptune" title="neptune" href="#neptunespeed">Neptune</a>
-    </div>
-    <div id="controls">
-        <label class="set-view">
-            <input type="checkbox">
-        </label>
-        <label class="set-zoom">
-            <input type="checkbox">
-        </label>
-        <label>
-            <input type="radio" class="set-speed" name="scale" checked>
-            <span>Speed</span>
-        </label>
-        <label>
-            <input type="radio" class="set-size" name="scale">
-            <span>Size</span>
-        </label>
-        <label>
-            <input type="radio" class="set-distance" name="scale">
-            <span>Distance</span>
-        </label>
-    </div>
-    <div id="universe" class="scale-stretched">
-        <div id="galaxy">
-            <div id="solar-system" class="earth">
-                <div id="mercury" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Mercury</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="venus" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Venus</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="earth" class="orbit">
-                    <div class="pos">
-                        <div class="orbit">
-                            <div class="pos">
-                                <div class="moon"></div>
-                            </div>
-                        </div>
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Earth</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="mars" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Mars</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="jupiter" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Jupiter</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="saturn" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <div class="ring"></div>
-                            <dl class="infos">
-                                <dt>Saturn</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="uranus" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Uranus</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="neptune" class="orbit">
-                    <div class="pos">
-                        <div class="planet">
-                            <dl class="infos">
-                                <dt>Neptune</dt>
-                                <dd><span></span></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div id="sun">
-                    <dl class="infos">
-                        <dt>Sun</dt>
-                        <dd><span></span></dd>
-                    </dl>
-                </div>
-            </div>
+
+    <!-- Container for content -->
+    <div class="container hidden-content">
+        <!-- Content here -->
+        <h1>Welcome to Our Website!</h1>
+        <p>Explore and enjoy our amazing content.</p>
+
+        <!-- Major buttons -->
+        <div class="button-row">
+            <a class="btn project-button" href="index-1.html">Play Game</a> <!-- Linked to index-1.html -->
+            <a class="btn about-button" href="#">About Page</a>
+            <a class="btn subscribe-button" href="#">Subscribe to Newsletter</a>
         </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof jQuery == 'undefined') {
-            document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-        }
+    <!-- Chat container -->
+    <div class="chat-container">
+        <textarea class="chat-textarea" placeholder="Type your message"></textarea>
+        <button class="chat-submit">Submit</button>
+    </div>
+
+    <!-- Initial video -->
+    <video class="initial-video" autoplay muted>
+        <source src="space-intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Show content after initial video ends -->
+    <script>
+        const initialVideo = document.querySelector('.initial-video');
+        const contentContainer = document.querySelector('.container');
+
+        initialVideo.addEventListener('ended', () => {
+            initialVideo.style.display = 'none';
+            contentContainer.style.display = 'block';
+        });
+
+        // Hide content after 8 seconds
+        setTimeout(() => {
+            contentContainer.style.display = 'none';
+        }, 8000);
     </script>
-    <script src="js/prefixfree.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-    <script src="index.js"></script>
-    
 </body>
 </html>
-
-
-
