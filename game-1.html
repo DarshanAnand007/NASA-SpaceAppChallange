@@ -4,35 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eclipse Questions</title>
+    <title>Eclipse Quiz</title>
     <!-- Include Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
         .video-container {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 60%;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 25px;
+            height: 0;
         }
 
         .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
         }
 
+        /* Add styles for questions and answers */
         .question-container {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 40%;
+            background-color: #FFA500;
+            color: #000;
             padding: 20px;
-            background-color: #f8f9fa; /* Bootstrap light gray background color */
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
-        .question-container h3 {
-            font-size: 24px;
+        /* Add styles for options */
+        .options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .option:hover {
+            background-color: #333;
+        }
+
+        /* Add styles for correct and incorrect feedback */
+        .correct {
+            background-color: #4CAF50;
+        }
+
+        .incorrect {
+            background-color: #F44336;
+        }
+
+        /* Add styles for points */
+        .points {
+            margin-top: 10px;
         }
 
         /* Adjust dropdown style with Bootstrap */
@@ -41,53 +77,65 @@
             max-width: 100%;
         }
 
-        /* Additional styling */
+        /* Additional styling for answers */
         .answer-container {
             margin-top: 20px;
         }
 
-        /* Styles for previous questions */
-        .old-questions {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 40%;
-            padding: 20px;
-            background-color: #f8f9fa; /* Bootstrap light gray background color */
-            margin-bottom: 50px;
+        /* Add styles for Next Question button */
+        .next-question {
+            display: none;
+            margin-top: 20px;
+            background-color: #FFA500;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
         }
 
-        /* Customize styles for previous questions */
-        .old-questions h3 {
-            font-size: 18px;
-        }
-
-        .old-questions p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="video-container">
-                <!-- Video 1: Lunar Eclipse -->
-                <iframe src="https://www.youtube.com/embed/VW2xRR75lKE?autoplay=1&start=5" frameborder="0" allowfullscreen></iframe>
+    <div class="container mt-5">
+        <!-- Video Player -->
+        <div class="video-container">
+            <!-- Replace 'VIDEO_ID' with your video URL -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- Quiz Options -->
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <div class="options">
+                    <div class="option" id="lunarOption">Lunar Eclipse</div>
+                    <div class="option" id="solarOption">Solar Eclipse</div>
+                </div>
+                <!-- Feedback -->
+                <div class="points" id="points"></div>
+                <!-- Next Question Button -->
+                <button class="next-question" id="nextQuestion">Next Question</button>
             </div>
-            <div class="question-container">
-                <h3>Select a Question:</h3>
-                <select class="custom-select" id="questionDropdown">
-                    <option value="" disabled selected>Select a question</option>
-                    <option value="lunarQuestion">What type of eclipse is this?</option>
-                    <option value="solarQuestion">What type of eclipse is this?</option>
-                </select>
-                <!-- Question and Answer Display -->
-                <div class="answer-container">
-                    <h3>Question:</h3>
-                    <p id="questionText"></p>
-                    <h3>Answer:</h3>
-                    <p id="answerText"></p>
+            <div class="col-lg-4">
+                <!-- Questions and Answers -->
+                <div class="question-container">
+                    <h3>Select a Question:</h3>
+                    <select class="form-select" id="questionDropdown">
+                        <option value="" disabled selected>Select a question</option>
+                        <option value="q1">How do eclipses occur?</option>
+                        <option value="q2">Why do only some people on Earth see an eclipse at a given time?</option>
+                        <option value="q3">What causes the Sun, Moon, and Earth to align?</option>
+                        <option value="q4">How often do eclipses occur?</option>
+                        <option value="q5">How do scientists know when and where eclipses will occur?</option>
+                        <option value="q6">What is the difference between a lunar and solar eclipse?</option>
+                        <option value="q7">What is an eclipse season and why do they occur approximately every six months?</option>
+                    </select>
+                    <!-- Question and Answer Display -->
+                    <div class="mt-4">
+                        <h3>Question:</h3>
+                        <p id="questionText"></p>
+                        <h3>Answer:</h3>
+                        <p id="answerText"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,8 +148,13 @@
     <script>
         // Define an object with answers to the questions
         const answers = {
-            lunarQuestion: "This is a lunar eclipse.",
-            solarQuestion: "This is a solar eclipse."
+            q1: "Eclipses occur when the Earth, Moon, and Sun align in a way that one celestial body casts a shadow on another.",
+            q2: "Only some people on Earth see an eclipse at a given time because eclipses have a specific path and are only visible from certain locations.",
+            q3: "The Sun, Moon, and Earth align due to the gravitational forces between them, causing the Moon to cast a shadow on the Earth during a solar eclipse.",
+            q4: "Eclipses occur several times a year, but not all of them are total eclipses. Total solar eclipses are rarer and happen less frequently.",
+            q5: "Scientists use astronomical calculations and models to predict when and where eclipses will occur. These predictions are highly accurate.",
+            q6: "A lunar eclipse occurs when the Earth comes between the Sun and the Moon, casting a shadow on the Moon. A solar eclipse happens when the Moon comes between the Sun and the Earth, casting a shadow on the Earth.",
+            q7: "Eclipse seasons occur when the Moon's orbit is aligned with the plane of the Earth's orbit around the Sun. This alignment causes eclipses to happen more frequently."
         };
 
         // Event listener for the question dropdown
@@ -113,16 +166,44 @@
             $('#questionText').text(questionText);
             $('#answerText').text(answerText);
         });
-    </script>
 
-    <!-- Previous Questions and Answers -->
-    <div class="old-questions">
-        <h3>Previous Questions:</h3>
-        <p id="lunarQuestion">What type of eclipse is this?</p>
-        <p id="solarQuestion">What type of eclipse is this?</p>
-        <h3>Answers:</h3>
-        <p>This is a lunar eclipse.</p>
-        <p>This is a solar eclipse.</p>
-    </div>
+        // Quiz Logic
+        let points = 0;
+
+        $('#lunarOption').click(function () {
+            if ($('#questionDropdown').val() === 'q6') {
+                points++;
+                $('#points').html(`<p class="correct">Correct! Points: ${points}</p>`);
+            } else {
+                points--;
+                $('#points').html(`<p class="incorrect">Incorrect. Points: ${points}</p>`);
+            }
+            // Show the Next Question button
+            $('#nextQuestion').show();
+        });
+
+        $('#solarOption').click(function () {
+            if ($('#questionDropdown').val() === 'q6') {
+                points--;
+                $('#points').html(`<p class="incorrect">Incorrect. Points: ${points}</p>`);
+            } else {
+                points++;
+                $('#points').html(`<p class="correct">Correct! Points: ${points}</p>`);
+            }
+            // Show the Next Question button
+            $('#nextQuestion').show();
+        });
+
+        // Event listener for the Next Question button
+        $('#nextQuestion').click(function () {
+            // Clear question and answer text
+            $('#questionText').text('');
+            $('#answerText').text('');
+            // Reset dropdown
+            $('#questionDropdown').val('').change();
+            // Hide Next Question button
+            $(this).hide();
+        });
+    </script>
 </body>
 </html>
