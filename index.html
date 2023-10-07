@@ -113,6 +113,34 @@
                 max-width: 90%;
             }
         }
+                video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media only screen and (min-width: 768px) {
+            video {
+                display: block;
+            }
+
+            #mobile-video {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            video {
+                display: none;
+            }
+
+            #mobile-video {
+                display: block;
+            }
+        }
 
         /* Adjust initial video sizing */
         .initial-video {
@@ -162,9 +190,10 @@
     <!-- Initial video -->
     <video class="initial-video" autoplay muted>
         <source src="space-intro.mp4" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
-
+    <video class="initial-video" autoplay muted id="mobile-video">
+        <source src="space-intro-M.mp4" type="video/mp4">
+    </video>
     <!-- Show content after initial video ends -->
     <script>
         const initialVideo = document.querySelector('.initial-video');
@@ -178,7 +207,7 @@
         // Hide content after 8 seconds
         setTimeout(() => {
             contentContainer.style.display = 'none';
-        }, 8000);
+        }, 4000);
     </script>
 
     <!-- Include Bootstrap JS and jQuery -->
