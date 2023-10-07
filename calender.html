@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <!-- Include Bootstrap CSS from a reliable source -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add background colors to different event types */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
+}
+
+/* Style the table headers */
+table thead th {
+    background-color: #007bff; /* Blue background for table headers */
+    color: #fff; /* White text color for table headers */
+    font-weight: bold; /* Bold font for table headers */
+}
+
+/* Style the "Set Reminder" buttons */
+.btn-primary {
+    background-color: #007bff; /* Blue background for buttons */
+    border-color: #007bff; /* Blue border color for buttons */
+    color: #fff; /* White text color for buttons */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3; /* Darker blue border color on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Upcoming Events</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Reminder</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023</td>
+                    <td>October 14</td>
+                    <td>Annular</td>
+                    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal1">Set Reminder</a></td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>April 8</td>
+                    <td>Total</td>
+                    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal2">Set Reminder</a></td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>October 2</td>
+                    <td>Annular</td>
+                    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal3">Set Reminder</a></td>
+                </tr>
+                <tr>
+
+<tr>
+    <td>2025</td>
+    <td>March 29</td>
+    <td>Partial</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal4">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2025</td>
+    <td>September 21</td>
+    <td>Partial</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal5">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2026</td>
+    <td>February 17</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal6">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2026</td>
+    <td>August 12</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal7">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2027</td>
+    <td>February 6</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal8">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2027</td>
+    <td>August 2</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal9">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2028</td>
+    <td>January 26</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal10">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2028</td>
+    <td>July 22</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal11">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2029</td>
+    <td>January 14</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal12">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2029</td>
+    <td>July 10</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal13">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2030</td>
+    <td>June 1</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal14">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2030</td>
+    <td>November 25</td>
+    <td>Partial</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal15">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2031</td>
+    <td>May 9</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal16">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2031</td>
+    <td>October 24</td>
+    <td>Partial</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal17">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2032</td>
+    <td>March 30</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal18">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2032</td>
+    <td>September 22</td>
+    <td>Partial</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal19">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2033</td>
+    <td>February 17</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal20">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2033</td>
+    <td>August 12</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal21">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2034</td>
+    <td>February 7</td>
+    <td>Annular</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal22">Set Reminder</a></td>
+</tr>
+<tr>
+    <td>2034</td>
+    <td>August 5</td>
+    <td>Total</td>
+    <td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reminderModal23">Set Reminder</a></td>
+</tr>
+<!-- Add more event rows here -->
+
+                <!-- Add more event rows here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Reminder Modals -->
+    <!-- Replace placeholders in the links with actual event details as needed -->
+    <div class="modal fade" id="reminderModal1" tabindex="-1" role="dialog" aria-labelledby="reminderModal1Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reminderModal1Label">Set Reminder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Click the button below to set a reminder on Google Calendar:</p>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%202023&details=Annular%20Eclipse%20on%20October%2014%2C%202023&dates=20231014/20231015" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reminderModal2" tabindex="-1" role="dialog" aria-labelledby="reminderModal2Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reminderModal2Label">Set Reminder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Click the button below to set a reminder on Google Calendar:</p>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%202024&details=Total%20Eclipse%20on%20April%208%2C%202024&dates=20240408/20240409" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reminderModal3" tabindex="-1" role="dialog" aria-labelledby="reminderModal3Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reminderModal3Label">Set Reminder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Click the button below to set a reminder on Google Calendar:</p>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%202024&details=Annular%20Eclipse%20on%20October%202%2C%202024&dates=20241002/20241003" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reminder Modal 4 -->
+<div class="modal fade" id="reminderModal4" tabindex="-1" role="dialog" aria-labelledby="reminderModal4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal4Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Partial%20Eclipse%202025&details=Partial%20Eclipse%20on%20March%2029%2C%202025&dates=20250329/20250330" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reminder Modal 5 -->
+<div class="modal fade" id="reminderModal5" tabindex="-1" role="dialog" aria-labelledby="reminderModal5Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal5Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Partial%20Eclipse%202025&details=Partial%20Eclipse%20on%20September%2021%2C%202025&dates=20250921/20250922" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 6 to 23 with similar structure -->
+<!-- Reminder Modal 6 -->
+<div class="modal fade" id="reminderModal6" tabindex="-1" role="dialog" aria-labelledby="reminderModal6Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal6Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%202026&details=Annular%20Eclipse%20on%20February%2017%2C%202026&dates=20260217/20260218" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 7 to 23 with similar structure -->
+<!-- Reminder Modal 7 -->
+<div class="modal fade" id="reminderModal7" tabindex="-1" role="dialog" aria-labelledby="reminderModal7Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal7Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%202026&details=Total%20Eclipse%20on%20August%2012%2C%202026&dates=20260812/20260813" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 8 to 23 with similar structure -->
+<!-- Reminder Modal 8 -->
+<div class="modal fade" id="reminderModal8" tabindex="-1" role="dialog" aria-labelledby="reminderModal8Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal8Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%202027&details=Annular%20Eclipse%20on%20February%206%2C%202027&dates=20270206/20270207" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 9 to 23 with similar structure -->
+<!-- Reminder Modal 9 -->
+<div class="modal fade" id="reminderModal9" tabindex="-1" role="dialog" aria-labelledby="reminderModal9Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal9Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%202027&details=Total%20Eclipse%20on%20August%202%2C%202027&dates=20270802/20270803" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 10 to 23 with similar structure -->
+<!-- Reminder Modal 10 -->
+<div class="modal fade" id="reminderModal10" tabindex="-1" role="dialog" aria-labelledby="reminderModal10Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal10Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%202028&details=Annular%20Eclipse%20on%20January%2026%2C%202028&dates=20280126/20280127" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 11 to 23 with similar structure -->
+<!-- Reminder Modal 11 -->
+<div class="modal fade" id="reminderModal11" tabindex="-1" role="dialog" aria-labelledby="reminderModal11Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal11Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%202028&details=Total%20Eclipse%20on%20July%2022%2C%202028&dates=20280722/20280723" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 12 to 23 with similar structure -->
+<!-- Reminder Modal 12 -->
+<div class="modal fade" id="reminderModal12" tabindex="-1" role="dialog" aria-labelledby="reminderModal12Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal12Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%202029&details=Annular%20Eclipse%20on%20January%2014%2C%202029&dates=20290114/20290115" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 13 to 23 with similar structure -->
+<!-- Reminder Modal 13 -->
+<div class="modal fade" id="reminderModal13" tabindex="-1" role="dialog" aria-labelledby="reminderModal13Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal13Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%202029&details=Total%20Eclipse%20on%20July%2010%2C%202029&dates=20290710/20290711" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 14 to 23 with similar structure -->
+<!-- Reminder Modal 14 -->
+<div class="modal fade" id="reminderModal14" tabindex="-1" role="dialog" aria-labelledby="reminderModal14Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal14Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%203030&details=Annular%20Eclipse%20on%20June%201%2C%203030&dates=30300601/30300602" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 15 to 23 with similar structure -->
+<!-- Reminder Modal 15 -->
+<div class="modal fade" id="reminderModal15" tabindex="-1" role="dialog" aria-labelledby="reminderModal15Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal15Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Partial%20Eclipse%203030&details=Partial%20Eclipse%20on%20November%2025%2C%203030&dates=30301125/30301126" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 16 to 23 with similar structure -->
+<!-- Reminder Modal 16 -->
+<div class="modal fade" id="reminderModal16" tabindex="-1" role="dialog" aria-labelledby="reminderModal16Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal16Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%203031&details=Total%20Eclipse%20on%20May%209%2C%203031&dates=30310509/30310510" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 17 to 23 with similar structure -->
+<!-- Reminder Modal 17 -->
+<div class="modal fade" id="reminderModal17" tabindex="-1" role="dialog" aria-labelledby="reminderModal17Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal17Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Partial%20Eclipse%203031&details=Partial%20Eclipse%20on%20October%2024%2C%203031&dates=30311024/30311025" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 18 to 23 with similar structure -->
+<!-- Reminder Modal 18 -->
+<div class="modal fade" id="reminderModal18" tabindex="-1" role="dialog" aria-labelledby="reminderModal18Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal18Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%203032&details=Annular%20Eclipse%20on%20March%2030%2C%203032&dates=30320330/30320331" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 19 to 23 with similar structure -->
+<!-- Reminder Modal 19 -->
+<div class="modal fade" id="reminderModal19" tabindex="-1" role="dialog" aria-labelledby="reminderModal19Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal19Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Partial%20Eclipse%203032&details=Partial%20Eclipse%20on%20September%2022%2C%203032&dates=30320922/30320923" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 20 to 23 with similar structure -->
+<!-- Reminder Modal 20 -->
+<div class="modal fade" id="reminderModal20" tabindex="-1" role="dialog" aria-labelledby="reminderModal20Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal20Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%203033&details=Annular%20Eclipse%20on%20February%2017%2C%203033&dates=30330217/30330218" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 21 to 23 with similar structure -->
+<!-- Reminder Modal 21 -->
+<div class="modal fade" id="reminderModal21" tabindex="-1" role="dialog" aria-labelledby="reminderModal21Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal21Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%203033&details=Total%20Eclipse%20on%20August%202%2C%203033&dates=30330802/30330803" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 22 to 23 with similar structure -->
+<!-- Reminder Modal 22 -->
+<div class="modal fade" id="reminderModal22" tabindex="-1" role="dialog" aria-labelledby="reminderModal22Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal22Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Annular%20Eclipse%203034&details=Annular%20Eclipse%20on%20January%2026%2C%203034&dates=30340126/30340127" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continue with modals for events 23 with similar structure -->
+<!-- Reminder Modal 23 -->
+<div class="modal fade" id="reminderModal23" tabindex="-1" role="dialog" aria-labelledby="reminderModal23Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reminderModal23Label">Set Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Click the button below to set a reminder on Google Calendar:</p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Total%20Eclipse%203034&details=Total%20Eclipse%20on%20July%2015%2C%203034&dates=30340715/30340716" target="_blank" class="btn btn-primary">Set Google Calendar Reminder</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Include Bootstrap JS and jQuery from a reliable source -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
