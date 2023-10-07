@@ -196,6 +196,7 @@
     </video>
     <!-- Show content after initial video ends -->
 <!-- Show content after initial video ends -->
+<!-- Show content after initial video ends -->
 <script>
     const initialVideo = document.querySelector('.initial-video');
     const contentContainer = document.querySelector('.container');
@@ -206,12 +207,11 @@
         mobileVideo.style.display = 'none';
         contentContainer.style.display = 'block';
 
-        // Hide mobile video after 8 seconds
-        setTimeout(() => {
-            mobileVideo.style.display = 'none';
-        }, 4000); // Change this to 8000 milliseconds (8 seconds)
+        // Remove the mobile video element from the DOM
+        mobileVideo.parentNode.removeChild(mobileVideo);
     });
 </script>
+
 
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
