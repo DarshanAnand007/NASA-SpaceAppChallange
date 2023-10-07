@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Registration</title>
+</head>
+<body>
+    <h1>Register with your Email</h1>
+    <form id="registration-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <input type="submit" value="Register">
+    </form>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var email = document.getElementById('email').value;
+
+            // Create a JavaScript object with the email data
+            var data = {
+                email: email
+            };
+
+            // Convert the JavaScript object to JSON
+            var jsonData = JSON.stringify(data);
+
+            // Send the JSON data to the server using fetch
+            fetch('https://script.google.com/macros/s/AKfycbyiPJQTocAPvEIrB2dsTRVYURxWZLSyM7xzmOMgOgYXeKXn7qQgcf4xZ5iSIMvsW0Us/exec', {
+                method: 'POST',
+                body: jsonData,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display a success or failure message on the web page
+                var messageElement = document.getElementById('message');
+                if (data.status === 'success') {
+                    messageElement.textContent = 'Registration successful';
+                    messageElement.style.color = 'green';
+
+                    // Send the welcome email to the registered user
+                    sendWelcomeEmail(email);
+                } else if (data.status === 'error') {
+                    messageElement.textContent = 'Registration error: ' + data.message;
+                    messageElement.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        function sendWelcomeEmail(email) {
+            // Send a POST request to your Google Apps Script function to send the welcome email
+            fetch('https://script.google.com/macros/s/AKfycbyiPJQTocAPvEIrB2dsTRVYURxWZLSyM7xzmOMgOgYXeKXn7qQgcf4xZ5iSIMvsW0Us/send-welcome-email', {
+                method: 'POST',
+                body: JSON.stringify({ email: email }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response as needed (you can display a message if required)
+                console.log('Welcome email sent:', data.status);
+            })
+            .catch(error => {
+                console.error('Error sending welcome email:', error);
+            });
+        }
+    </script>
+</body>
+</html>
