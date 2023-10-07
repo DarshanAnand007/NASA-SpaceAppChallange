@@ -1,0 +1,63 @@
+/* Styles for the video and question box container */
+.video-container {
+    position: relative;
+    width: 100%; /* Set the width to 100% to take up the entire screen */
+    display: flex;
+}
+
+/* Styles for the video */
+#video {
+    flex: 1; /* Allow the video to expand and take up available space */
+}
+
+/* Styles for the question box */
+.question-box {
+    position: absolute;
+    top: 50%;
+    right: -400px; /* Initially off-screen */
+    background-color: #333; /* Dark background color */
+    color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transform: translateY(-50%); /* Center vertically */
+    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transition for sliding in/out and opacity */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Styles for question box elements */
+.question-box h2 {
+    margin-top: 0;
+    font-size: 1.2em; /* Larger font size */
+}
+
+.question-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.question-box ul li {
+    margin-bottom: 10px;
+}
+
+/* Style for the buttons */
+.question-box ul li button {
+    background-color: #007BFF; /* Blue background color */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.question-box ul li button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Animation for the question box */
+.question-box.active {
+    right: 20px; /* Slide it into view */
+    opacity: 1; /* Fade it in */
+}
