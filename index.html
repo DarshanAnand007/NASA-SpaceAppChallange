@@ -287,6 +287,7 @@
     </video>
     <!-- Show content after initial video ends -->
  <!-- Show content after initial video ends -->
+<!-- Show content after initial video ends -->
 <script>
     const initialVideo = document.querySelector('.initial-video');
     const contentContainer = document.querySelector('.container');
@@ -295,15 +296,11 @@
     // Function to handle the removal of the mobile video
     function removeMobileVideo() {
         mobileVideo.style.display = 'none';
-        mobileVideo.parentNode.removeChild(mobileVideo);
-        // Remove the z-index from the video element
-        initialVideo.style.zIndex = 'auto';
+        initialVideo.style.display = 'none';
+        contentContainer.style.display = 'block';
     }
 
     initialVideo.addEventListener('ended', () => {
-        initialVideo.style.display = 'none';
-        contentContainer.style.display = 'block';
-
         // Start a timer to remove the mobile video after 4 seconds
         setTimeout(removeMobileVideo, 4000);
     });
@@ -311,6 +308,7 @@
     // Start a timer to remove the mobile video after 4 seconds even if it doesn't end
     setTimeout(removeMobileVideo, 4000);
 </script>
+
 
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
