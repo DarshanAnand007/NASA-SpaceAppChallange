@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse Questions</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .video-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 60%;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .question-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 40%;
+            padding: 20px;
+            background-color: #f8f9fa; /* Bootstrap light gray background color */
+        }
+
+        .question-container h3 {
+            font-size: 24px;
+        }
+
+        /* Adjust dropdown style with Bootstrap */
+        .custom-select {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Additional styling */
+        .answer-container {
+            margin-top: 20px;
+        }
+
+        /* Styles for previous questions */
+        .old-questions {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 40%;
+            padding: 20px;
+            background-color: #f8f9fa; /* Bootstrap light gray background color */
+            margin-bottom: 50px;
+        }
+
+        /* Customize styles for previous questions */
+        .old-questions h3 {
+            font-size: 18px;
+        }
+
+        .old-questions p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="video-container">
+                <!-- Video 1: Lunar Eclipse -->
+                <iframe src="https://www.youtube.com/embed/VW2xRR75lKE?autoplay=1&start=5" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="question-container">
+                <h3>Select a Question:</h3>
+                <select class="custom-select" id="questionDropdown">
+                    <option value="" disabled selected>Select a question</option>
+                    <option value="lunarQuestion">What type of eclipse is this?</option>
+                    <option value="solarQuestion">What type of eclipse is this?</option>
+                </select>
+                <!-- Question and Answer Display -->
+                <div class="answer-container">
+                    <h3>Question:</h3>
+                    <p id="questionText"></p>
+                    <h3>Answer:</h3>
+                    <p id="answerText"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Define an object with answers to the questions
+        const answers = {
+            lunarQuestion: "This is a lunar eclipse.",
+            solarQuestion: "This is a solar eclipse."
+        };
+
+        // Event listener for the question dropdown
+        $('#questionDropdown').change(function () {
+            const selectedQuestion = $(this).val();
+            const questionText = $('#' + selectedQuestion).text();
+            const answerText = answers[selectedQuestion];
+
+            $('#questionText').text(questionText);
+            $('#answerText').text(answerText);
+        });
+    </script>
+
+    <!-- Previous Questions and Answers -->
+    <div class="old-questions">
+        <h3>Previous Questions:</h3>
+        <p id="lunarQuestion">What type of eclipse is this?</p>
+        <p id="solarQuestion">What type of eclipse is this?</p>
+        <h3>Answers:</h3>
+        <p>This is a lunar eclipse.</p>
+        <p>This is a solar eclipse.</p>
+    </div>
+</body>
+</html>
