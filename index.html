@@ -207,6 +207,8 @@
     function removeMobileVideo() {
         mobileVideo.style.display = 'none';
         mobileVideo.parentNode.removeChild(mobileVideo);
+        // Remove the z-index from the video element
+        initialVideo.style.zIndex = 'auto';
     }
 
     initialVideo.addEventListener('ended', () => {
@@ -220,6 +222,7 @@
     // Start a timer to remove the mobile video after 4 seconds even if it doesn't end
     setTimeout(removeMobileVideo, 4000);
 </script>
+
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
