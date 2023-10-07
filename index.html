@@ -204,10 +204,8 @@
     const mobileVideo = document.getElementById('mobile-video');
 
     // Function to handle the removal of the mobile video
-    function removeMobileVideo() {
+    function hideMobileVideo() {
         mobileVideo.style.display = 'none';
-        mobileVideo.parentNode.removeChild(mobileVideo);
-        // Remove the z-index from the video element
         initialVideo.style.zIndex = 'auto';
     }
 
@@ -215,12 +213,12 @@
         initialVideo.style.display = 'none';
         contentContainer.style.display = 'block';
 
-        // Start a timer to remove the mobile video after 4 seconds
-        setTimeout(removeMobileVideo, 4000);
+        // Start a timer to hide the mobile video after 4 seconds
+        setTimeout(hideMobileVideo, 4000);
     });
 
-    // Start a timer to remove the mobile video after 4 seconds even if it doesn't end
-    setTimeout(removeMobileVideo, 4000);
+    // Start a timer to hide the mobile video after 4 seconds even if it doesn't end
+    setTimeout(hideMobileVideo, 4000);
 </script>
 
     <!-- Include Bootstrap JS and jQuery -->
