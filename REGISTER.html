@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Email Registration</title>
+    <title>Register Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Register with your Email</h1>
-    <form id="registrationForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <input type="submit" value="Register">
-    </form>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Register</h2>
+                        <form id="registrationForm">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
         document.getElementById("registrationForm").addEventListener("submit", function (e) {
             e.preventDefault();
             const email = document.getElementById("email").value;
 
+            // Send the email to the Google Apps Script
             fetch('https://script.google.com/macros/s/AKfycbyiPJQTocAPvEIrB2dsTRVYURxWZLSyM7xzmOMgOgYXeKXn7qQgcf4xZ5iSIMvsW0Us/exec', {
                 method: 'POST',
-                body: JSON.stringify({ email }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    alert('Registration successful');
-                } else if (data.status === 'error') {
-                    alert('Registration failed: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+                mode: 'no-cors',
+                body: JSON.stringify({ email: email })
+            }).then(response => {
+                console.log('Registration successful:', email);
+                alert('Registration successful');
+            }).catch(error => {
+                console.error('Registration failed:', error);
+                alert('Registration failed');
             });
         });
     </script>

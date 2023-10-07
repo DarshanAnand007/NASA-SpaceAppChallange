@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!</title>
 
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body {
             margin: 0;
@@ -117,14 +120,24 @@
             height: 40%;
             object-fit: cover;
         }
+            /* Video background */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
-    <!-- Sketchfab iframe background -->
-    <div class="sketchfab-iframe">
-        <iframe title="Space Shuttle" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/15921a3146d84577907bbe420244f4b7/embed?autospin=1&autostart=1"></iframe>
+<div hidden-content>
+    <video autoplay muted loop >
+        <source src="space-bg.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
     </div>
-
     <!-- Container for content -->
     <div class="container hidden-content">
         <!-- Content here -->
@@ -166,5 +179,10 @@
             contentContainer.style.display = 'none';
         }, 8000);
     </script>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
