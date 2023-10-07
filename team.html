@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Members</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;1,400">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;1,400");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Asap', 'Poppins', sans-serif;
+      text-shadow: #000 0 0 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      background: #111;
+
+      @media (min-width: 1024px) {
+        flex-direction: row;
+      }
+    }
+
+    .item {
+      position: relative;
+      flex: calc(100vw / 6) 1 1;
+      background-size: cover;
+      overflow: hidden;
+      filter: saturate(90%);
+      transition: 1s;
+    }
+
+    .item:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(25deg, rgba(0,0,0,.9), rgba(0,0,0,0));
+    }
+
+    .item:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+      animation: borderPulse 5s infinite;
+
+      @media (min-width: 1024px) {
+        border-right: 1px solid #ccc;
+        border-bottom: none;
+      }
+    }
+
+    .item:hover {
+      flex-basis: 40%;
+      filter: saturate(120%);
+
+      @media (min-width: 1024px) {
+        flex-basis: 75%;
+      }
+
+      .quote {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .item:nth-child(1) {
+      background-image: url("assets/Anuj_Profile.jpeg");
+      background-position: 72% 35%;
+    }
+
+    .item:nth-child(2) {
+      background-image: url("assets/Darshan_1.jpeg");
+      background-position: 60% 8%;
+    }
+
+    .item:nth-child(3) {
+      background-image: url("static/assets-img/divith1.jpeg");
+      background-position: 52% 8%;
+    }
+
+    .item:nth-child(4) {
+      background-image: url("static/assets-img/Ashish_Profile.jpeg");
+      background-position: 45% 8%;
+    }
+
+    .item:nth-child(5) {
+      background-image: url("static/assets-img/Ayush_Profile.JPG");
+      background-position: 45% 25%;
+    }
+
+    .quote {
+      position: absolute;
+      color: #fff;
+      bottom: 15%; /* Adjust the value to control the vertical position */
+      left: 5rem;
+      width: calc(100% - 10rem);
+      opacity: 0;
+      transition: 1s;
+      transform: translateX(50%);
+
+      @media (min-width: 512px) {
+        left: 15%;
+        bottom: 35%;
+        width: 20vw;
+      }
+
+      @media (min-width: 1024px) {
+        left: 15%;
+        bottom: 35%;
+        width: 30vw;
+      }
+
+      p {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1.7rem;
+        font-size: 1.4rem;
+        text-wrap: balance;
+        font-style: italic;
+
+        &:before,
+        &:after {
+          position: absolute;
+          font-size: 5.5rem;
+          opacity: .6;
+        }
+
+        &:before {
+          content: "“";
+          top: 4rem;
+          left: -2rem;
+          transform: translate(-100%, -100%);
+        }
+
+        &:after {
+          content: "”";
+          bottom: 2rem;
+          right: -2rem;
+          transform: translate(100%, 100%);
+        }
+      }
+
+      span {
+        position: absolute;
+        bottom: -2rem;
+        right: 0;
+        text-align: right;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transform: translate(4rem, 100%);
+
+        &:before {
+          content: "—";
+          margin-right: .7rem;
+        }
+      }
+    }
+
+    @keyframes borderPulse {
+      0%, 100% {
+        border-color: rgba(204, 204, 204, 1);
+      }
+
+      25%, 75% {
+        border-color: rgba(204, 204, 255, 0.9);
+      }
+
+      50% {
+        border-color: rgba(204, 204, 255, 0.5);
+      }
+    }
+
+    .subtitle {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="quote">
+        <p><span>Anuj Dwivedi</span><br><span class="subtitle">Strategic Scholar x Developer</span></p>
+        <p>Check out: <a href="https://projectai.me">Link</a></p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="quote">
+        <p><span>Darshan Anand</span><br><span class="subtitle">Vedha Voyager</span></p>
+        <p>Check out: <a href="https://linktr.ee/Darshan_Anand">Link</a></p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="quote">
+        <p><span>Divith BS</span><br><span class="subtitle">Entrepreneur</span></p>
+        <p>Check out: <a href="https://linktr.ee/divithbs">Link</a></p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="quote">
+        <p><span>Divith BS</span><br><span class="subtitle">Photographer, Cinematographer</span></p>
+        <p>Check out: <a href="https://linktr.ee/ashishpa222">Link</a></p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="quote">
+        <p><span>Ayush Agarwal</span><br><span class="subtitle">Tech-Savvy Lensmaster</span></p>
+        <p>Check out: <a href="https://instagram.com/ayu_18_sh?igshid=MzNlNGNkZWQ4Mg==">Link</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
