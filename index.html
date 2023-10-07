@@ -76,17 +76,17 @@
             margin-bottom: 10px;
         }
 
-  /* Chat container */
-.chat-container {
-    position: fixed;
-    top: 20px; /* Adjust the top positioning */
-    right: 20px; /* Adjust the right positioning */
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1;
-}
+        /* Chat container */
+        .chat-container {
+            position: fixed;
+            top: 20px; /* Adjust the top positioning */
+            right: 20px; /* Adjust the right positioning */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1;
+        }
 
         /* Chat textarea */
         .chat-textarea {
@@ -117,7 +117,7 @@
                 max-width: 90%;
             }
         }
-                video {
+        video {
             position: fixed;
             top: 0;
             left: 0;
@@ -146,15 +146,14 @@
             }
         }
 
-/* Adjust initial video sizing */
-.initial-video {
-
-    object-fit: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Increase the z-index to ensure it's on top of the content */
-}
+        /* Adjust initial video sizing */
+        .initial-video {
+            object-fit: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* Increase the z-index to ensure it's on top of the content */
+        }
 
             /* Video background */
         video {
@@ -165,63 +164,64 @@
             min-height: 100%;
             z-index: -1;
         }
-    /* Style for the profile dropdown container */
-.profile-dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 1; /* Ensure it's above the video */
-}
+        /* Style for the profile dropdown container */
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1; /* Ensure it's above the video */
+        }
 
-/* Style for the profile button */
-.profile-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-}
+        /* Style for the profile button */
+        .profile-button {
+            background-color: #49b94d;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
 
-/* Style for the profile dropdown content (hidden by default) */
-.profile-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px -8px 16px 0px rgba(0,0,0,0.2); /* Updated to open upwards */
-    z-index: 2; /* Increase the z-index to ensure it's on top of the video */
-    right: 0; /* Align the dropdown with the right edge of the button */
-}
+        /* Style for the profile dropdown content (hidden by default) */
+        .profile-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #524848;
+            min-width: 160px;
+            box-shadow: 0px -8px 16px 0px rgba(0,0,0,0.2); /* Updated to open upwards */
+            z-index: 2; /* Increase the z-index to ensure it's on top of the video */
+            right: 0; /* Align the dropdown with the right edge of the button */
+            opacity: 0.7;
+        }
 
-/* Style for each individual profile */
-.profile {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    cursor: pointer;
-}
+        /* Style for each individual profile */
+        .profile {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
 
-/* Style for the circular profile images */
-.profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
+        /* Style for the circular profile images */
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
-/* Style for the profile names */
-.profile-name {
-    font-weight: bold;
-}
+        /* Style for the profile names */
+        .profile-name {
+            font-weight: bold;
+        }
 
-/* Hover effect for profile items */
-.profile:hover {
-    background-color: #ddd;
-}
+        /* Hover effect for profile items */
+        .profile:hover {
+            background-color: #ddd;
+        }
 
-/* Display the dropdown content when hovering over the profile button */
-.profile-dropdown:hover .profile-dropdown-content {
-    display: block;
-}
+        /* Display the dropdown content when hovering over the profile button */
+        .profile-dropdown:hover .profile-dropdown-content {
+            display: block;
+        }
 
     </style>
 </head>
@@ -253,24 +253,24 @@
         <button class="profile-button">Connect</button>
         <div class="profile-dropdown-content">
             <div class="profile">
-                <img src="profile-image-1.jpg" alt="Profile 1">
-                <div class="profile-name">Anuj Dwivedi</div>
+                <img src="./assets/profile-image-1.jpeg" alt="Profile 1">
+                <div class="profile-name"><a href="https://linktr.ee/anuj_dwivedi">Anuj Dwivedi</a></div>
             </div>
             <div class="profile">
-                <img src="profile-image-2.jpg" alt="Profile 2">
-                <div class="profile-name">Darshan Anand</div>
+                <img src="./assets/profile-image-2.jpeg" alt="Profile 2">
+                <div class="profile-name"><a href="https://linktr.ee/Darshan_Anand">Darshan Anand</a></div>
             </div>
             <div class="profile">
-                <img src="profile-image-3.jpg" alt="Profile 3">
-                <div class="profile-name">KVS Balaji</div>
+                <img src="./assets/profile-image-3.jpeg" alt="Profile 3">
+                <div class="profile-name"><a href="https://github.com/KVS-Balaji">KVS Balaji</a></div>
             </div>
             <div class="profile">
-                <img src="profile-image-4.jpg" alt="Profile 4">
-                <div class="profile-name">Saurav J Gor</div>
+                <img src="./assets/profile-image-4.jpeg" alt="Profile 4">
+                <div class="profile-name"><a href="https://github.com/Sourabh-Gor">Saurav J Gor</a></div>
             </div>
-                        <div class="profile">
-                <img src="profile-image-4.jpg" alt="Profile 4">
-                <div class="profile-name">Vaibhav</div>
+            <div class="profile">
+                <img src="./assets/profile-image-1.jpeg" alt="Profile 4">
+                <div class="profile-name"><a href="">Vaibhav</a></div>
             </div>
         </div>
     </div>
