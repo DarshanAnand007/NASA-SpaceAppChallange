@@ -41,7 +41,7 @@
         <a class="venus" title="venus" href="#venusspeed">Venus</a>
         <a class="earth active" title="earth" href="#earthspeed">Earth</a>
         <a class="mars" title="mars" href="#marsspeed">Mars</a>
-        <button onclick="window.location.href = 'eclipse.html';">ECLIPSE</button>
+        <<button onclick ="btnFunc()">ECLIPSE</button>
         <a class="jupiter" title="jupiter" href="#jupiterspeed">Jupiter</a>
         <a class="saturn" title="saturn" href="#saturnspeed">Saturn</a>
         <a class="uranus" title="uranus" href="#uranusspeed">Uranus</a>
@@ -165,7 +165,11 @@
             </div>
         </div>
     </div>
-
+    <script>
+        function btnFunc() {
+            window.location.href = "https://eclips-model.vercel.app";
+        }
+    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script type="text/javascript">
         if (typeof jQuery == 'undefined') {
