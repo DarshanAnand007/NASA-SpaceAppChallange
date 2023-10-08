@@ -182,12 +182,25 @@
     .subtitle {
       white-space: nowrap;
     }
+    input.back_button {
+      height: 40px;
+      width: 40px;
+      border-radius: 40px;
+      background-image: url("./assets/back_button.png");
+      background-size: 35px;
+      opacity: 25%;
+      transition: opacity 0.5s ease;
+    }
+    .back_button:hover {
+      opacity: 100%;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="item">
+    <input type="button" class="back_button" onclick="window.history.back()">
       <div class="quote">
         <p><span>Anuj Dwivedi</span><br><span class="subtitle">Strategic Scholar x Developer</span></p>
         <p>Check out: <a href="https://linktr.ee/anuj_dwivedi">Link</a></p>
