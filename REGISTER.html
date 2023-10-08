@@ -16,9 +16,22 @@
         #email {
             background-color: rgba(255, 255, 255, 0.5);
         }
+        input.back_button {
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+            background-image: url("./assets/back_button.png");
+            background-size: 35px;
+            opacity: 25%;
+            transition: opacity 0.5s ease;
+        }
+        .back_button:hover {
+            opacity: 100%;
+        }
     </style>
 </head>
 <body>
+    <input type="button" class="back_button" onclick="window.history.back()">
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
