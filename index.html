@@ -283,13 +283,13 @@ video {
     </div>
 </div>
 
-    <!-- Initial video -->
-    <video class="initial-video" autoplay muted>
-        <source src="space-intro.mp4" type="video/mp4">
-    </video>
-    <video class="initial-video" autoplay muted id="mobile-video">
-        <source src="space-intro-M.mp4" type="video/mp4">
-    </video>
+<video class="initial-video" autoplay muted playsinline>
+    <source src="space-intro.mp4" type="video/mp4">
+</video>
+<video class="initial-video" autoplay muted id="mobile-video" playsinline>
+    <source src="space-intro-M.mp4" type="video/mp4">
+</video>
+
     <!-- Show content after initial video ends -->
   <script>
     const initialVideo = document.querySelector('.initial-video');
