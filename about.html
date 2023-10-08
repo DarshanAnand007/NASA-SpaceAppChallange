@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Our Eclipse Game</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-image: url("https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?cs=srgb&dl=pexels-kai-pilger-1341279.jpg&fm=jpg");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 4em;
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 1.5em;
+      line-height: 1.5em;
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-top: 2em;
+      color: #ffffff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .space {
+      margin-top: 2em;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    /* Twinkling star animation */
+
+    .twinkling-star {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      opacity: 0.5;
+      animation: twinkle 1s infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+
+    /* Bouncing headline animation */
+
+    h1 {
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>About Our Eclipse Game</h1>
+
+    <p>This game is designed to help you learn more about eclipses. We are a team of developers who are passionate about eclipses, and we created this game to share our knowledge with you.</p>
+
+    <p>The game teaches you about the different types of eclipses, how and why they occur, and the different eclipse seasons. It also teaches you about the science behind eclipses, such as the Moon's orbit around the Earth and the Earth's orbit around the Sun.</p>
+
+    <p>The game is easy to play. You simply answer questions about eclipses. The more questions you answer correctly, the more you learn about eclipses.</p>
+
+    <p class="center">If you have any questions or feedback about the game, please contact us at<br> <a href="https://www.google.com">grahanyatri@gmail.com</a>.</p>
+  </div>
+
+  <script>
+    // Add twinkling star animation to the background
+    const twinklingStars = document.querySelectorAll('.twinkling-star');
+
+    twinklingStars.forEach(star => {
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      star.style.top = Math.random() * window.innerHeight + 'px';
+    });
+  </script>
+</body>
+</html>
