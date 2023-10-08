@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            
-        }
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black; /* Set the background color to black */
+}
+
 
         /* Sketchfab iframe background */
         .sketchfab-iframe {
@@ -118,34 +119,52 @@
                 max-width: 90%;
             }
         }
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* Updated CSS for video elements */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 
-        @media only screen and (min-width: 768px) {
-            video {
-                display: flex;
-            }
+@media only screen and (max-width: 767px) {
+    /* Hide desktop video when the screen width is less than 768px */
+    video:not(#mobile-video) {
+        display: none;
+    }
+}
 
-            #mobile-video {
-                display: none;
-            }
-        }
+/* Adjust initial video sizing */
+.initial-video {
+    object-fit: contain;
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Set the height to 100% */
+    /* Increase the z-index to ensure it's on top of the content */
+}
 
-        @media only screen and (max-width: 767px) {
-            video {
-                display: none;
-            }
+/* Video background */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    /* Add this to prevent overlap on mobile screens */
+    display: none;
+}
 
-            #mobile-video {
-                display: block;
-            }
-        }
+@media only screen and (min-width: 768px) {
+    video {
+        display: flex;
+    }
 
         /* Adjust initial video sizing */
         .initial-video {
@@ -157,15 +176,6 @@
             /* Increase the z-index to ensure it's on top of the content */
         }
 
-            /* Video background */
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
         /* Style for the profile dropdown container */
         .profile-dropdown {
             position: relative;
@@ -278,13 +288,13 @@
     </div>
 </div>
 
-    <!-- Initial video -->
-    <video class="initial-video" autoplay muted>
-        <source src="space-intro.mp4" type="video/mp4">
-    </video>
-    <video class="initial-video" autoplay muted id="mobile-video">
-        <source src="space-intro-M.mp4" type="video/mp4">
-    </video>
+<video class="initial-video" autoplay muted playsinline>
+    <source src="space-intro.mp4" type="video/mp4">
+</video>
+<video class="initial-video" autoplay muted id="mobile-video" playsinline>
+    <source src="space-intro-M.mp4" type="video/mp4">
+</video>
+
     <!-- Show content after initial video ends -->
   <script>
     const initialVideo = document.querySelector('.initial-video');
