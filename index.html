@@ -163,10 +163,15 @@ video {
         display: flex;
     }
 
-    #mobile-video {
-        display: none;
-    }
-}
+        /* Adjust initial video sizing */
+        .initial-video {
+            object-fit: contain;
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* Increase the z-index to ensure it's on top of the content */
+        }
 
         /* Style for the profile dropdown container */
         .profile-dropdown {
@@ -226,7 +231,7 @@ video {
         .profile-dropdown:hover .profile-dropdown-content {
             display: block;
         }
-
+    }
     </style>
 </head>
 <body>
